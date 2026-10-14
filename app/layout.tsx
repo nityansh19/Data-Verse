@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import IntroSplash from "./IntroSplash";
 
 export const metadata: Metadata = {
   title: "Integral DataVerse — Learn Data. Build What's Next.",
@@ -26,5 +27,5 @@ export const viewport: Viewport = {
   themeColor: "#080d0b"
 };
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body>{children}</body></html>;
+  return <html lang="en"><body><IntroSplash />{children}</body></html>;
 }
