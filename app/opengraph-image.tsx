@@ -6,28 +6,27 @@ export const contentType = "image/png";
 export default function OpenGraphImage() {
   return new ImageResponse(
     <div style={{
-      width: "100%", height: "100%", background: "#0c120e", color: "#f0f6ec",
-      display: "flex", flexDirection: "column", justifyContent: "space-between",
-      padding: 80, position: "relative", overflow: "hidden"
+      width: "100%", height: "100%", padding: 76, background: "#0b100d",
+      color: "#f0f5ed", display: "flex", flexDirection: "column",
+      justifyContent: "space-between"
     }}>
-      <div style={{ display: "flex", alignItems: "center", gap: 15, fontSize: 28, fontWeight: 700 }}>
-        <div style={{ width: 56, height: 56, borderRadius: 14, background: "#b7fa68", color: "#132111", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 30 }}>dv</div>
-        <span>data<span style={{ fontWeight: 400 }}>verse</span><span style={{ color: "#b7fa68" }}>.</span></span>
+      <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+        <div style={{
+          display: "flex", alignItems: "center", justifyContent: "center",
+          width: 58, height: 58, border: "2px solid #bcf77e", borderRadius: 12,
+          fontSize: 27, fontWeight: 700
+        }}>dv</div>
+        <span style={{ fontSize: 31, fontWeight: 700 }}>dataverse<span style={{ color: "#bcf77e" }}>.</span></span>
       </div>
-      <div style={{ display: "flex", flexDirection: "column", gap: 21 }}>
-        <span style={{ fontSize: 18, color: "#b7fa68", letterSpacing: 3 }}>DATA SCIENCE & ANALYTICS CLUB</span>
-        <span style={{ fontSize: 95, lineHeight: 1.07, letterSpacing: -5, fontWeight: 700 }}>Curiosity, meet</span>
-        <span style={{ fontSize: 100, lineHeight: 1, letterSpacing: -5, color: "#b7fa68", fontWeight: 700 }}>possibility.</span>
+      <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
+        <span style={{ color: "#bcf77e", fontSize: 16, letterSpacing: 2 }}>A STUDENT-LED DATA SCIENCE & ANALYTICS INITIATIVE</span>
+        <span style={{ fontSize: 91, letterSpacing: -5, fontWeight: 700 }}>Curious minds.</span>
+        <span style={{ fontSize: 94, letterSpacing: -5, fontWeight: 700, color: "#bcf77e" }}>Limitless ideas.</span>
       </div>
-      <div style={{ fontSize: 20, color: "#aabca9", letterSpacing: 1 }}>LEARN TOGETHER. BUILD TOGETHER. GROW TOGETHER.</div>
-      <div style={{
-        position: "absolute", right: -210, top: 90, width: 590, height: 590,
-        border: "2px solid #b7fa6845", borderRadius: "50%", display: "flex",
-        alignItems: "center", justifyContent: "center", zIndex: -1
-      }}>
-        <div style={{ width: 370, height: 370, border: "1px solid #b7fa6833", borderRadius: "50%" }} />
+      <div style={{ color: "#aec2ad", fontSize: 19, letterSpacing: 1 }}>
+        LEARN TOGETHER · BUILD TOGETHER · GROW TOGETHER
       </div>
     </div>,
-    { ...size }
+    size
   );
 }

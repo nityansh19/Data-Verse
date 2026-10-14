@@ -1,63 +1,37 @@
-# DataVerse ✳
+# DataVerse
 
-**Curiosity, meet possibility.**
+**Curious minds. Limitless ideas.**
 
-An interactive, dark editorial landing page for **DataVerse**, a student-led Data Science & Analytics Club.
+A short, premium landing page introducing **DataVerse**, a new student-led Data Science & Analytics initiative, to students, teachers, and faculty.
 
-## What's included
+## What the website covers
 
-- Fully responsive, premium single-page Next.js website
-- Abstract interactive hero, animated orbit and glowing data visualization
-- Four interactive learning tracks: Python, Data Analytics, Statistics & Visualization, AI/ML
-- Mission and values, club activity cards, conceptual dashboard, 3-month roadmap
-- Founding Five recruitment links to the existing independent assessment portal
-- Mobile navigation, accessible track tabs and expandable FAQs
-- SEO metadata, Open Graph social image, SVG favicon, reduced-motion accessibility
-- GitHub Actions TypeScript/build checks
+- An introduction to DataVerse and why we're starting.
+- Learning interests: Python, Data Analytics, Statistics, Data Visualization and AI.
+- Proposed activities: learn together, build projects, develop community.
+- Benefits for students and opportunities for faculty collaboration.
+- A simple three-step plan: Connect, Explore, Create.
 
-## Run locally
+The club is at an early stage. The page presents intentions as *plans*, not completed achievements, and makes no claims of official institutional approval. It deliberately includes no selection tests, recruitment portal, fake membership numbers, nonfunctional sign-up buttons, or personal data forms.
 
-Requirements: Node.js 20.9+.
+## Development
+
+Requires Node.js 20.9+.
 
 \`\`\`bash
 npm install
 npm run dev
 \`\`\`
 
-Open http://localhost:3000
-
-## Build
+Visit http://localhost:3000.
 
 \`\`\`bash
 npm run typecheck
 npm run build
-npm run start
 \`\`\`
 
-## Deploy to Vercel
+## Deployment
 
-1. Visit https://vercel.com/new and import \`nityansh19/Data-Verse\`.
-2. Select the **Next.js** framework; leave Root Directory as \`./\`.
-3. No database credentials or environment variables are required.
-4. Click **Deploy**. Subsequent GitHub commits to \`main\` redeploy automatically.
+The repository is connected to Vercel. Updates to \`main\` should trigger a deployment automatically. No environment variables or database are needed.
 
-## Recruitment link
-
-The **Founding Five** button opens the independent test:
-
-https://ds-test-roan.vercel.app
-
-The assessment website and its private admin dashboard are not part of this repository. The club's landing page does **not** collect personal data.
-
-## Content accuracy
-
-Club learning sessions, three-month roadmap, and activities are **planned**, not representations that events have already taken place. Membership and founding-team selection are separate. The page makes no unverifiable claims about official institutional affiliation, teachers, sponsorship, alumni, membership numbers, or completed events.
-
-## Tech stack
-
-Next.js 15 · React 19 · TypeScript · Lucide React · custom CSS.
-
-Designed for accessible interactions, reduced motion, responsive layouts and efficient performance.
-
----
-Made for the curious.
+**Stack:** Next.js 15, React 19, TypeScript, Lucide icons and custom responsive CSS.
