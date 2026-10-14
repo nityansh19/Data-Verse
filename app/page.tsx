@@ -121,9 +121,22 @@ function InteractiveLab() {
           <div className="lab-header-main"><span className="lab-sparkle">✳</span><span>INSIDE THE VERSE</span></div>
           <span className="lab-label"><span className="signal"/> EXPLORE</span>
         </div>
-        <div className="lab-intro">
-          <span>YOUR LEARNING PLAYGROUND</span>
-          <h2>What could you <em>explore?</em></h2>
+        <div className="lab-intro lab-intro-branded">
+          <div className="lab-intro-text">
+            <span>WELCOME TO DATAVERSE</span>
+            <h2>What could you <em>explore?</em></h2>
+            <small>YOUR CLUB. YOUR IDEAS. YOUR UNIVERSE.</small>
+          </div>
+          <div className="club-logo-frame">
+            <Image
+              src="/dataverse-club-logo.webp"
+              alt="DataVerse club logo — glowing purple DV emblem with a connected data globe"
+              width={112}
+              height={112}
+              className="club-identity-logo"
+              priority
+            />
+          </div>
         </div>
         <div className="lab-tabs" role="tablist" aria-label="Explore DataVerse learning topics">
           {tracks.map(track=><button type="button" key={track.id} role="tab" id={"tab-"+track.id} aria-controls="lab-content" aria-selected={selected===track.id}
