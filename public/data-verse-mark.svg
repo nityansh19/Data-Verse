@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" role="img" aria-labelledby="title desc">
+<title id="title">Data Verse</title><desc id="desc">Violet DV monogram with data bars, a connected data globe and orbital particles.</desc>
+<defs>
+ <linearGradient id="violet" x1="0" y1="0" x2=".96" y2="1"><stop stop-color="#cfa1ff"/><stop offset=".28" stop-color="#762ee4"/><stop offset=".65" stop-color="#321264"/><stop offset="1" stop-color="#b875ff"/></linearGradient>
+ <linearGradient id="line" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#7024bb"/><stop offset=".55" stop-color="#f6a9ff"/><stop offset="1" stop-color="#723aff"/></linearGradient>
+ <linearGradient id="txt" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ffdaff"/><stop offset=".46" stop-color="#c580ff"/><stop offset="1" stop-color="#7228cc"/></linearGradient>
+ <filter id="glow" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation="11"/></filter>
+ <filter id="soft" x="-25%" y="-25%" width="150%" height="150%"><feGaussianBlur stdDeviation="3"/></filter>
+ </defs>
+ <!-- A subtle diffuse glow keeps the black background cinematic without becoming a stamp. -->
+ <ellipse cx="452" cy="325" rx="295" ry="230" fill="#711bca" opacity=".18" filter="url(#glow)"/>
+ <g fill="none" stroke="url(#line)" stroke-width="2.3" opacity=".73">
+  <path d="M361 273C357 167 431 98 511 99C590 103 648 178 643 266"/>
+  <path d="M390 266C422 123 538 101 620 230"/>
+  <path d="M432 262C446 171 472 126 509 99C557 159 573 213 582 278"/>
+  <path d="M371 177C458 128 560 151 629 212"/>
+  <path d="M367 236C463 199 559 214 638 264"/>
+ </g>
+ <g fill="#bd79ff">
+  <circle cx="511" cy="100" r="9"/><circle cx="427" cy="145" r="8"/><circle cx="555" cy="157" r="9"/><circle cx="616" cy="216" r="8"/><circle cx="463" cy="213" r="8"/><circle cx="574" cy="260" r="7"/><circle cx="391" cy="266" r="5"/>
+ </g>
+ <!-- DV emblem: clean interlocking geometry and data-bar cutout. -->
+ <path d="M191 244H359C424 244 457 284 457 353C457 421 401 483 307 483H211L246 425H296C353 425 384 390 384 349C384 314 361 301 326 301H219Z" fill="url(#violet)" stroke="#d199ff" stroke-width="2"/>
+ <path d="M436 263L526 462L646 264H733L523 546L352 277Z" fill="url(#violet)" stroke="#e3abff" stroke-width="2.4"/>
+ <path d="M254 413V377H286V413Z M302 413V344H334V413Z M350 408V319H371V393Z" fill="url(#txt)" opacity=".94"/>
+ <path d="M206 245H356C419 245 457 278 456 349" fill="none" stroke="#f9c6ff" stroke-width="3" opacity=".7"/>
+ <path d="M437 263L524 463L646 264" fill="none" stroke="#ebb2ff" stroke-width="3.4" opacity=".9"/>
+ <!-- A sharply controlled orbit and orbital nodes are the visual signature. -->
+ <ellipse cx="458" cy="341" rx="337" ry="122" fill="none" stroke="#7f27ec" stroke-width="24" opacity=".25" filter="url(#glow)" transform="rotate(-17 458 341)"/>
+ <ellipse cx="458" cy="341" rx="337" ry="122" fill="none" stroke="url(#line)" stroke-width="4" opacity=".95" transform="rotate(-17 458 341)"/>
+ <circle cx="150" cy="441" r="21" fill="url(#violet)" stroke="#ffcbff" stroke-width="2"/><circle cx="766" cy="236" r="17" fill="url(#violet)" stroke="#df9aff" stroke-width="2"/>
+ <circle cx="686" cy="467" r="7" fill="#d897ff"/><circle cx="243" cy="270" r="6" fill="#d897ff"/>
+ <text x="450" y="638" font-family="Arial, Helvetica, sans-serif" font-size="81" font-weight="800" text-anchor="middle" letter-spacing="11" fill="url(#txt)" stroke="#b771ff" stroke-width=".55">DATA VERSE</text>
+ <path d="M221 659H679" stroke="#a958ff" stroke-width="2" opacity=".55"/>
+</svg>
