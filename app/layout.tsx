@@ -2,21 +2,21 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "DataVerse — Curious Minds. Limitless Ideas.",
-  description: "DataVerse is a new student-led Data Science & Analytics initiative. Discover our purpose, learning areas and simple plan for a community where students learn, build and grow together.",
-  applicationName: "DataVerse",
-  keywords: ["DataVerse", "student club", "data science", "data analytics", "Python", "AI", "student community"],
+  title: "Integral DataVerse — Curious Minds. Limitless Ideas.",
+  description: "Integral DataVerse is a new student-led Data Science & Analytics initiative at Integral University, Lucknow, bringing curious students together to learn, build and grow.",
+  applicationName: "Integral DataVerse",
+  keywords: ["Integral DataVerse", "Integral University Lucknow", "DataVerse", "student club", "data science", "data analytics", "Python", "AI", "student community"],
   openGraph: {
     type: "website",
     locale: "en_IN",
-    siteName: "DataVerse",
-    title: "DataVerse — Curious Minds. Limitless Ideas.",
-    description: "A student-led space to learn, build and grow through data, technology and shared curiosity."
+    siteName: "Integral DataVerse",
+    title: "Integral DataVerse — Curious Minds. Limitless Ideas.",
+    description: "A new student-led Data Science & Analytics initiative at Integral University, Lucknow."
   },
   twitter: {
     card: "summary_large_image",
-    title: "DataVerse — Curious Minds. Limitless Ideas.",
-    description: "A student-led Data Science & Analytics initiative, just getting started."
+    title: "Integral DataVerse — Curious Minds. Limitless Ideas.",
+    description: "A student-led Data Science & Analytics initiative at Integral University, Lucknow."
   },
   robots: { index: true, follow: true }
 };

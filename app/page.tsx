@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   ArrowDownRight, ArrowRight, ArrowUpRight, BarChart3,
   BookOpen, BrainCircuit, Code2, Compass, Lightbulb,
@@ -32,9 +33,12 @@ const steps = [
 
 function Logo() {
   return (
-    <a href="#top" className="logo" aria-label="DataVerse, back to top">
-      <span className="logo-mark" aria-hidden="true">d<span>/</span>v</span>
-      <span className="logo-word">data<span>verse</span><i>.</i></span>
+    <a href="#top" className="logo" aria-label="Integral DataVerse, back to top">
+      <Image className="university-seal" src="/integral-university-seal.webp" alt="Integral University seal" width={52} height={52} />
+      <span className="logo-lockup">
+        <span className="logo-word">Integral <span>DataVerse</span><i>.</i></span>
+        <span className="logo-subline">STUDENT-LED · LUCKNOW</span>
+      </span>
     </a>
   );
 }
@@ -78,9 +82,13 @@ export default function Home() {
       <main>
         <section className="container hero" aria-labelledby="main-title">
           <div className="hero-content">
-            <div className="eyebrow"><span className="signal" /> A STUDENT-LED INITIATIVE · JUST GETTING STARTED</div>
+            <div className="eyebrow"><span className="signal" /> INTEGRAL UNIVERSITY · LUCKNOW · STUDENT-LED</div>
             <h1 id="main-title">Curious minds.<br /><em>Limitless ideas.</em></h1>
-            <p>Meet <strong>DataVerse</strong> — a growing Data Science &amp; Analytics community where students can explore technology, learn by doing and build things together.</p>
+            <p>Meet <strong>Integral DataVerse</strong> — an emerging student-led Data Science &amp; Analytics initiative at <strong>Integral University, Lucknow</strong>, where curious minds can explore technology, learn by doing and build together.</p>
+            <div className="campus-affiliation">
+              <Image src="/integral-university-seal.webp" alt="" width={45} height={45} />
+              <div><strong>Rooted in the Integral University community</strong><span>Lucknow, Uttar Pradesh · Just getting started</span></div>
+            </div>
             <div className="hero-actions">
               <a href="#about" className="button button-primary">Discover DataVerse <ArrowUpRight size={18} /></a>
               <a href="#plan" className="button button-secondary">Our starting plan <ArrowRight size={18} /></a>
@@ -104,8 +112,8 @@ export default function Home() {
           <div className="about-grid">
             <h2>More than a club.<br /><em>A place to begin.</em></h2>
             <div className="about-copy">
-              <p>DataVerse is our idea for a welcoming space between <strong>classroom learning and real-world skills.</strong> A place to ask questions, try new technologies and work on ideas together.</p>
-              <p>We&apos;re at the beginning — shaping our plans and community as we go. Whether you&apos;re a beginner or already love coding, there&apos;s room to explore.</p>
+              <p>Integral DataVerse is an initiative by students of <strong>Integral University, Lucknow</strong>, creating a welcoming bridge between classroom learning and real-world skills.</p>
+              <p>We&apos;re just starting out. With interested students and faculty guidance, we hope to explore new technologies, work on projects and grow a supportive learning community.</p>
             </div>
           </div>
           <div className="subjects"><span>WHAT WE'LL EXPLORE</span><div>{subjects.map(subject => <span className="subject" key={subject}>{subject}</span>)}</div></div>
@@ -127,7 +135,7 @@ export default function Home() {
             </div>
             <div className="benefits">
               <div><Lightbulb size={21} /><p><strong>For students</strong><span>Practical skills, confidence, teamwork and room to experiment.</span></p></div>
-              <div><BrainCircuit size={21} /><p><strong>For faculty &amp; college</strong><span>Opportunities for mentoring, projects and student-led academic collaboration.</span></p></div>
+              <div><BrainCircuit size={21} /><p><strong>For faculty &amp; Integral University</strong><span>Opportunities for mentoring, projects and student-led academic collaboration.</span></p></div>
             </div>
           </div>
         </section>
@@ -135,7 +143,7 @@ export default function Home() {
         <section id="plan" className="container plan section-space">
           <div className="plan-header">
             <div><div className="section-label"><span>03 / 03</span><i /> OUR FIRST STEPS</div><h2>Small starts.<br /><em>Big possibilities.</em></h2></div>
-            <p>We&apos;re keeping our first chapter simple. With student participation and faculty guidance, here&apos;s how we hope to begin.</p>
+            <p>Our first chapter at Integral University will start small, with student participation, faculty guidance and room to learn along the way.</p>
           </div>
           <div className="steps">
             {steps.map(step => <div className="step" key={step.number}>
@@ -149,8 +157,8 @@ export default function Home() {
       </main>
       <footer className="footer"><div className="container footer-inner">
         <Logo />
-        <p>For curious minds. By curious minds.</p>
-        <div><span>STUDENT-LED · DATA SCIENCE &amp; ANALYTICS</span><a href="#top">BACK TO TOP ↑</a></div>
+        <p>Student-led Data Science &amp; Analytics initiative at Integral University, Lucknow.</p>
+        <div><span>INTEGRAL UNIVERSITY · LUCKNOW</span><a href="#top">BACK TO TOP ↑</a></div>
       </div></footer>
     </>
   );

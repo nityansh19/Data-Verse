@@ -16,10 +16,10 @@ export default function OpenGraphImage() {
           width: 58, height: 58, border: "2px solid #bcf77e", borderRadius: 12,
           fontSize: 27, fontWeight: 700
         }}>dv</div>
-        <span style={{ fontSize: 31, fontWeight: 700 }}>dataverse<span style={{ color: "#bcf77e" }}>.</span></span>
+        <span style={{ fontSize: 31, fontWeight: 700 }}>Integral DataVerse<span style={{ color: "#bcf77e" }}>.</span></span>
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
-        <span style={{ color: "#bcf77e", fontSize: 16, letterSpacing: 2 }}>A STUDENT-LED DATA SCIENCE & ANALYTICS INITIATIVE</span>
+        <span style={{ color: "#bcf77e", fontSize: 16, letterSpacing: 2 }}>AT INTEGRAL UNIVERSITY, LUCKNOW · STUDENT-LED</span>
         <span style={{ fontSize: 91, letterSpacing: -5, fontWeight: 700 }}>Curious minds.</span>
         <span style={{ fontSize: 94, letterSpacing: -5, fontWeight: 700, color: "#bcf77e" }}>Limitless ideas.</span>
       </div>

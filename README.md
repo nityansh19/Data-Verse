@@ -35,3 +35,9 @@ npm run build
 The repository is connected to Vercel. Updates to \`main\` should trigger a deployment automatically. No environment variables or database are needed.
 
 **Stack:** Next.js 15, React 19, TypeScript, Lucide icons and custom responsive CSS.
+
+## University context
+
+**Integral DataVerse** is an emerging student-led Data Science & Analytics initiative by students of Integral University, Lucknow. The website includes the Integral University seal, provided by the organizer and optimized for fast web display. Displaying the seal does not imply official university authorization, sponsorship or endorsement.
+
+Website brand: Integral DataVerse · Student-led · Integral University, Lucknow.

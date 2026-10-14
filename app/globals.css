@@ -128,3 +128,29 @@ h2{font:600 clamp(46px,5.5vw,76px)/1.1 var(--display);letter-spacing:-.072em}
 @media(max-width:790px){.hero{min-height:0;display:flex;flex-direction:column;align-items:stretch;gap:22px;padding-top:66px;padding-bottom:60px}.hero h1{font-size:clamp(64px,10vw,83px)}.visual{height:450px;width:100%;max-width:490px;margin:0 auto}.scroll-label{position:static}.about-grid{grid-template-columns:1fr;gap:25px}.subjects{flex-direction:column;align-items:flex-start}.section-heading,.plan-header{flex-direction:column;align-items:flex-start;gap:22px}.feature-grid{gap:10px}.feature{padding:18px;min-height:310px}.feature h3{font-size:21px}.step>div{flex-direction:column;align-items:flex-start;gap:7px}}
 @media(max-width:610px){.container{width:calc(100% - 38px)}.header-inner{flex-wrap:wrap;gap:14px;padding:13px 0}.logo-word{font-size:21px}.logo-mark{height:37px;width:37px}.nav{order:3;width:100%;justify-content:space-between;border-top:1px solid #324a35;padding-top:13px;gap:10px}.nav a{font-size:11px}.nav-link{margin-left:auto;font-size:10px}.hero{padding-top:46px;padding-bottom:46px;gap:25px}.eyebrow{font-size:7px;gap:8px;padding:10px}.hero h1{font-size:clamp(51px,11.6vw,68px);white-space:normal;margin:28px 0 22px}.hero-content>p:not(.hero-note){font-size:14px}.hero-actions{flex-direction:column;align-items:stretch}.button{width:100%}.hero-note{margin-top:26px;font-size:11px}.visual{height:343px;max-width:385px}.orbit-one{width:89%}.visual-core{width:43%}.visual-core strong{font-size:39px}.visual-core small{font-size:6px}.visual-tag{font-size:7px;padding:10px}.visual-tag-top{left:0;top:13%}.visual-tag-bottom{right:0;bottom:14%}.visual-caption{font-size:7px}.section-space{padding-top:69px;padding-bottom:69px}.section-label{font-size:9px}.about-grid h2,.section-heading h2,.plan-header h2{font-size:clamp(44px,10vw,60px)}.about-copy p{font-size:14px}.subjects>div{gap:7px}.subject{font-size:9px}.section-heading>p,.plan-header>p{font-size:13px}.feature-grid{grid-template-columns:1fr;margin-top:28px;gap:11px}.feature{min-height:230px;padding:22px}.feature-icon{height:57px;width:57px;margin:24px 0}.feature-icon svg{width:28px}.feature h3{font-size:24px}.feature p{font-size:12px}.benefits{grid-template-columns:1fr;gap:24px}.steps{margin-top:29px}.step{gap:17px;padding:21px 2px}.step-number{font-size:36px}.step h3{font-size:22px}.step p{font-size:12px}.step>svg{width:19px}.final-note{padding:22px 17px;gap:13px}.final-icon{width:43px;height:43px}.final-note h3{font-size:22px}.final-arrow{display:none}.footer-inner{flex-direction:column;align-items:flex-start;gap:16px}.footer-inner>div{align-items:flex-start;line-height:1.5}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.signal,.orbit-accent,.visual-tag,.ticker-track{animation:none!important}.button,.feature{transition:none!important}}
+
+/* Integral University affiliation and responsive seal */
+.logo-lockup{display:flex;flex-direction:column;gap:4px;min-width:0}
+.logo-subline{font:500 8px var(--mono);color:#a2bca0;letter-spacing:.105em}
+.university-seal{display:block;width:52px;height:52px;object-fit:contain;flex:none;background:#f7f4f7;border-radius:50%;padding:2px;box-shadow:0 0 0 1px #9666a442}
+.logo .logo-word{font-size:22px;letter-spacing:-1.2px;white-space:nowrap}
+.logo .logo-word span{font-weight:600}
+.logo .logo-word i{color:#d1a3e2}
+.campus-affiliation{display:flex;align-items:center;gap:12px;margin-top:25px;width:fit-content;max-width:100%;padding:10px 15px 10px 10px;border:1px solid #475d45;border-radius:11px;background:linear-gradient(105deg,#253427,#17241a)}
+.campus-affiliation>img{height:45px;width:45px;flex:none;border-radius:50%;background:#f7f4f7;padding:2px}
+.campus-affiliation>div{display:flex;flex-direction:column;gap:5px}
+.campus-affiliation strong{font:600 12px var(--display);color:#eff6e7}
+.campus-affiliation span{font:400 11px var(--body);color:#b8c9b5}
+@media(max-width:1000px){.logo .logo-word{font-size:19px}.header-inner{gap:13px}.nav{gap:21px}.university-seal{width:45px;height:45px}}
+@media(max-width:610px){
+  .logo .logo-word{font-size:18px}
+  .logo-subline{font-size:7px;letter-spacing:.04em}
+  .university-seal{width:40px;height:40px}
+  .campus-affiliation{padding:9px;gap:9px}
+  .campus-affiliation>img{width:38px;height:38px}
+  .campus-affiliation strong{font-size:10px}
+  .campus-affiliation span{font-size:10px}
+  .eyebrow{white-space:normal;line-height:1.7}
+  .footer-inner>p{max-width:335px}
+}
+@media(max-width:375px){.header-inner .nav-link{font-size:8px}.logo .logo-word{font-size:16px}.university-seal{width:34px;height:34px}}
