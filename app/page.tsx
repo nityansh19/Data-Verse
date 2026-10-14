@@ -1,165 +1,262 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import {
-  ArrowDownRight, ArrowRight, ArrowUpRight, BarChart3,
-  BookOpen, BrainCircuit, Code2, Compass, Lightbulb,
-  MoveUpRight, Sparkles, UsersRound, Workflow
+  ArrowDownRight, ArrowRight, ArrowUpRight, BarChart3, BookOpenText,
+  BrainCircuit, Check, ChevronDown, Code2, Compass, Database,
+  GraduationCap, Lightbulb, Menu, MousePointer2, Play, Rocket,
+  Sparkles, Terminal, UsersRound, X
 } from "lucide-react";
 
-const subjects = ["Python", "Data Analytics", "Statistics", "Data Visualization", "AI Foundations"];
+type TrackId = "python" | "data" | "ai";
 
-const features = [
-  {
-    number: "01", Icon: BookOpen, type: "LEARNING",
-    title: "Learn together.",
-    description: "Beginner-friendly sessions where questions are encouraged and new skills feel achievable."
-  },
-  {
-    number: "02", Icon: Code2, type: "BUILDING",
-    title: "Make things real.",
-    description: "Practical exercises, useful datasets and small projects that turn theory into experience."
-  },
-  {
-    number: "03", Icon: UsersRound, type: "COMMUNITY",
-    title: "Grow with people.",
-    description: "Connect with students, share ideas, practise teamwork and support each other's progress."
-  }
+const tracks = [
+  { id: "python" as TrackId, short: "PYTHON", headline: "From an idea to a program.",
+    detail: "Learn the basics, solve problems and discover how much you can build with Python.",
+    focus: ["Logic & coding", "Hands-on exercises"] },
+  { id: "data" as TrackId, short: "DATA", headline: "Make data make sense.",
+    detail: "Explore datasets, ask questions and turn discoveries into clear visual stories.",
+    focus: ["Data exploration", "Charts & dashboards"] },
+  { id: "ai" as TrackId, short: "AI", headline: "Get curious about AI.",
+    detail: "Understand the foundations behind machine learning and experiment responsibly.",
+    focus: ["AI foundations", "Team experiments"] }
 ];
 
-const steps = [
-  { number: "01", title: "Connect", description: "Bring curious students together and introduce the community." },
-  { number: "02", title: "Explore", description: "Start practical sessions, workshops and small shared challenges." },
-  { number: "03", title: "Create", description: "Build collaborative projects and present what we've learned." }
+const activities = [
+  { n: "01", icon: BookOpenText, tag: "LEARN", title: "Workshops that make sense.",
+    description: "Beginner-friendly sessions in Python, analytics and AI. Less memorising, more understanding.",
+    foot: "Discover a new skill" },
+  { n: "02", icon: Database, tag: "BUILD", title: "Ideas you can actually make.",
+    description: "Mini projects, real-world datasets and practical exercises to connect theory with doing.",
+    foot: "Create with real data" },
+  { n: "03", icon: UsersRound, tag: "TOGETHER", title: "People to learn alongside.",
+    description: "Share knowledge, meet collaborators, improve communication and grow as a community.",
+    foot: "Find your people" }
 ];
 
-function Logo() {
+const phases = [
+  { number: "01", title: "Connect", label: "BUILD THE COMMUNITY",
+    summary: "Meet curious people and introduce DataVerse.",
+    detail: "Our first step is to bring interested students together, introduce the club's purpose and discover what everyone wants to learn.",
+    tags: ["Student introductions", "Shared interests", "Getting started"] },
+  { number: "02", title: "Explore", label: "LEARN BY DOING",
+    summary: "Try the fundamentals through hands-on sessions.",
+    detail: "We plan to explore Python, basic data analysis and visualisation through approachable workshops and small group challenges.",
+    tags: ["Practical workshops", "Beginner challenges", "Peer learning"] },
+  { number: "03", title: "Create", label: "MAKE IT REAL",
+    summary: "Turn new skills into collaborative projects.",
+    detail: "With time and faculty guidance, we'd like to build meaningful mini-projects and share what we've learned with the wider community.",
+    tags: ["Team projects", "Demo sessions", "Project showcases"] }
+];
+
+function Brand() {
   return (
-    <a href="#top" className="logo" aria-label="Integral DataVerse, back to top">
-      <Image className="university-seal" src="/integral-university-seal.webp" alt="Integral University seal" width={52} height={52} />
-      <span className="logo-lockup">
-        <span className="logo-word">Integral <span>DataVerse</span><i>.</i></span>
-        <span className="logo-subline">STUDENT-LED · LUCKNOW</span>
+    <a href="#top" className="brand" aria-label="Integral DataVerse — back to top">
+      <Image className="brand-crest" src="/integral-university-seal.webp" alt="Integral University seal" width={51} height={51} priority />
+      <span className="brand-lockup">
+        <span className="brand-name">Integral <strong>DataVerse<span className="brand-dot">.</span></strong></span>
+        <span className="brand-caption">A STUDENT-LED INITIATIVE · LUCKNOW</span>
       </span>
     </a>
   );
 }
 
-function Visual() {
-  return (
-    <div className="visual" role="img" aria-label="Abstract illustration of connected ideas and data">
-      <div className="visual-grid" aria-hidden="true" />
-      <div className="orbit orbit-one" />
-      <div className="orbit orbit-two" />
-      <div className="orbit orbit-three" />
-      <div className="orbit-accent" />
-      <div className="visual-core">
-        <small>THE IDEA ENGINE</small>
-        <strong>data<span>.</span></strong>
-        <small>curiosity → possibility</small>
+function LabVisual({ selected }: { selected: TrackId }) {
+  if (selected === "python") return (
+    <div className="lab-visual code-visual" aria-label="Example Python code">
+      <div className="window-bar">
+        <div className="window-dots"><i /><i /><i /></div>
+        <span>hello_dataverse.py</span>
+        <Terminal size={15} />
       </div>
-      <div className="visual-tag visual-tag-top"><span className="signal" /> LEARN / BUILD / GROW</div>
-      <div className="visual-tag visual-tag-bottom"><BarChart3 size={16} /> IDEAS BECOME INSIGHTS</div>
-      <div className="visual-dot dot-one" /><div className="visual-dot dot-two" />
-      <div className="visual-plus plus-one">+</div><div className="visual-plus plus-two">+</div>
-      <span className="visual-caption">DATA / CURIOSITY / COMMUNITY</span>
+      <div className="code-body">
+        <div><span>01</span><code><em># learning is better together</em></code></div>
+        <div><span>02</span><code><b>club</b> = <i>&quot;DataVerse&quot;</i></code></div>
+        <div><span>03</span><code><b>skills</b> = [<i>&quot;learn&quot;</i>, <i>&quot;build&quot;</i>, <i>&quot;grow&quot;</i>]</code></div>
+        <div><span>04</span><code>&nbsp;</code></div>
+        <div><span>05</span><code><strong>for</strong> skill <strong>in</strong> skills:</code></div>
+        <div><span>06</span><code>&nbsp;&nbsp;<strong>print</strong>(skill)</code></div>
+      </div>
+      <div className="window-output"><span>›</span> learn <span className="output-sep">·</span> build <span className="output-sep">·</span> grow <span className="cursor" /></div>
+    </div>
+  );
+  if (selected === "data") return (
+    <div className="lab-visual data-visual" aria-label="Illustrative example bar chart for learning data visualisation">
+      <div className="visual-topline"><span><span className="signal" /> VISUALISATION PRACTICE</span><span>SAMPLE DATA</span></div>
+      <div className="bar-graph" role="img" aria-label="Illustrative bars for sample categories A through F">
+        {[37,66,48,80,56,95].map((v,i) => <div className="graph-column" key={i}>
+          <span className="graph-bar" style={{height:v+"%"}} />
+          <small>{String.fromCharCode(65+i)}</small>
+        </div>)}
+      </div>
+      <div className="data-visual-footer"><span><Check size={14} /> ASK A QUESTION</span><span><Check size={14} /> FIND A PATTERN</span></div>
+    </div>
+  );
+  return (
+    <div className="lab-visual ai-visual" aria-label="The steps of a beginner machine learning concept">
+      <div className="visual-topline"><span><span className="signal" /> THE BASICS OF INTELLIGENT SYSTEMS</span><BrainCircuit size={18}/></div>
+      <div className="ai-flow">
+        <div className="ai-node"><Database size={27}/><strong>Data</strong><span>Observe</span></div>
+        <ArrowRight size={22} className="flow-arrow"/>
+        <div className="ai-node selected"><Sparkles size={27}/><strong>Patterns</strong><span>Learn</span></div>
+        <ArrowRight size={22} className="flow-arrow"/>
+        <div className="ai-node"><Lightbulb size={27}/><strong>Ideas</strong><span>Explore</span></div>
+      </div>
+      <div className="ai-visual-footer">Explore the concepts. Ask what comes next. <span>✳</span></div>
+    </div>
+  );
+}
+
+function InteractiveLab() {
+  const [selected,setSelected]=useState<TrackId>("python");
+  const active=tracks.find(track=>track.id===selected)!;
+  return (
+    <div className="lab-shell">
+      <div className="lab-halo halo-one"/><div className="lab-halo halo-two"/>
+      <div className="lab-floating floating-one"><Sparkles size={15}/> START WITH CURIOSITY</div>
+      <div className="lab-floating floating-two"><MousePointer2 size={14}/> TRY THE LAB ↓</div>
+      <div className="lab-card">
+        <div className="lab-header">
+          <div className="lab-header-main"><span className="lab-sparkle">✳</span><span>INSIDE THE VERSE</span></div>
+          <span className="lab-label"><span className="signal"/> EXPLORE</span>
+        </div>
+        <div className="lab-intro">
+          <span>YOUR LEARNING PLAYGROUND</span>
+          <h2>What could you <em>explore?</em></h2>
+        </div>
+        <div className="lab-tabs" role="tablist" aria-label="Explore DataVerse learning topics">
+          {tracks.map(track=><button type="button" key={track.id} role="tab" id={"tab-"+track.id} aria-controls="lab-content" aria-selected={selected===track.id}
+            className={selected===track.id?"lab-tab active":"lab-tab"} onClick={()=>setSelected(track.id)}>{track.short}</button>)}
+        </div>
+        <div className="lab-content" role="tabpanel" id="lab-content" aria-labelledby={"tab-"+selected} key={selected}>
+          <LabVisual selected={selected}/>
+          <div className="lab-details">
+            <div className="lab-detail-heading"><h3>{active.headline}</h3><ArrowUpRight size={18}/></div>
+            <p>{active.detail}</p>
+            <div className="lab-skills">{active.focus.map(x=><span key={x}><Check size={12}/>{x}</span>)}</div>
+          </div>
+        </div>
+        <div className="lab-footer"><span><span className="lab-sparkle">✳</span> A PLACE TO TRY THINGS</span><span>{String(tracks.findIndex(t=>t.id===selected)+1).padStart(2,"0")} / 03</span></div>
+      </div>
     </div>
   );
 }
 
 export default function Home() {
+  const [menuOpen,setMenuOpen]=useState(false);
+  const [openPhase,setOpenPhase]=useState<number>(0);
   return (
     <>
-      <header className="header" id="top">
+      <header className="site-header" id="top">
         <div className="container header-inner">
-          <Logo />
-          <nav className="nav" aria-label="Main navigation">
-            <a href="#about">About</a>
-            <a href="#activities">What we do</a>
-            <a href="#plan">Our plan</a>
+          <Brand/>
+          <nav id="main-navigation" className={menuOpen?"main-nav open":"main-nav"} aria-label="Main navigation">
+            <a href="#about" onClick={()=>setMenuOpen(false)}>About the club</a>
+            <a href="#activities" onClick={()=>setMenuOpen(false)}>What we&apos;ll do</a>
+            <a href="#plan" onClick={()=>setMenuOpen(false)}>Our plan</a>
           </nav>
-          <a href="#plan" className="nav-link">Our beginning <ArrowUpRight size={15} /></a>
+          <a href="#activities" className="nav-action">Explore DataVerse <ArrowUpRight size={17}/></a>
+          <button type="button" className="menu-toggle" aria-label={menuOpen?"Close menu":"Open menu"} aria-controls="main-navigation" aria-expanded={menuOpen} onClick={()=>setMenuOpen(!menuOpen)}>{menuOpen?<X size={22}/>:<Menu size={22}/>}</button>
         </div>
       </header>
       <main>
-        <section className="container hero" aria-labelledby="main-title">
-          <div className="hero-content">
-            <div className="eyebrow"><span className="signal" /> INTEGRAL UNIVERSITY · LUCKNOW · STUDENT-LED</div>
-            <h1 id="main-title">Curious minds.<br /><em>Limitless ideas.</em></h1>
-            <p>Meet <strong>Integral DataVerse</strong> — an emerging student-led Data Science &amp; Analytics initiative at <strong>Integral University, Lucknow</strong>, where curious minds can explore technology, learn by doing and build together.</p>
-            <div className="campus-affiliation">
-              <Image src="/integral-university-seal.webp" alt="" width={45} height={45} />
-              <div><strong>Rooted in the Integral University community</strong><span>Lucknow, Uttar Pradesh · Just getting started</span></div>
+        <section className="hero" aria-labelledby="hero-title">
+          <div className="hero-background"><div className="hero-noise"/></div>
+          <div className="container hero-grid">
+            <div className="hero-copy">
+              <div className="eyebrow"><span className="eyebrow-sparkle">✳</span> AT INTEGRAL UNIVERSITY, LUCKNOW</div>
+              <div className="hero-label"><span className="label-line"/> DATA SCIENCE &amp; ANALYTICS CLUB INITIATIVE</div>
+              <h1 id="hero-title">Learn data.<br/><em>Build what&apos;s next.</em></h1>
+              <p className="hero-description"><strong>Integral DataVerse</strong> is a student-led initiative where curious students explore <b>Python, data science and AI</b>, work on practical ideas and grow together.</p>
+              <div className="hero-actions">
+                <a className="btn btn-primary" href="#about">What is DataVerse? <ArrowUpRight size={20}/></a>
+                <a className="btn btn-outline" href="#activities"><Play size={16}/> See what we&apos;ll do</a>
+              </div>
+              <div className="hero-promises"><span><Check size={15}/> Beginners welcome</span><span><Check size={15}/> Projects over theory</span></div>
             </div>
-            <div className="hero-actions">
-              <a href="#about" className="button button-primary">Discover DataVerse <ArrowUpRight size={18} /></a>
-              <a href="#plan" className="button button-secondary">Our starting plan <ArrowRight size={18} /></a>
-            </div>
-            <p className="hero-note"><Sparkles size={15} /> No experience needed. Curiosity is enough to begin.</p>
+            <InteractiveLab/>
           </div>
-          <Visual />
-          <a href="#about" className="scroll-label"><ArrowDownRight size={17} /> SCROLL TO EXPLORE</a>
+          <div className="container hero-bottom"><span>LEARNING STARTS WITH ONE QUESTION.</span><a href="#about">MEET THE CLUB <ArrowDownRight size={18}/></a></div>
         </section>
 
-        <div className="ticker" aria-label="Our philosophy">
-          <div className="ticker-track" aria-hidden="true">
-            {Array.from({ length: 4 }, (_, i) => <div className="ticker-item" key={i}>
-              <span>STAY CURIOUS</span><b>✳</b><span>LEARN TOGETHER</span><b>✳</b><span>BUILD SOMETHING REAL</span><b>✳</b>
-            </div>)}
-          </div>
-        </div>
-
-        <section id="about" className="container about section-space">
-          <div className="section-label"><span>01 / 03</span><i /> THE IDEA</div>
-          <div className="about-grid">
-            <h2>More than a club.<br /><em>A place to begin.</em></h2>
-            <div className="about-copy">
-              <p>Integral DataVerse is an initiative by students of <strong>Integral University, Lucknow</strong>, creating a welcoming bridge between classroom learning and real-world skills.</p>
-              <p>We&apos;re just starting out. With interested students and faculty guidance, we hope to explore new technologies, work on projects and grow a supportive learning community.</p>
+        <section id="about" className="about-section">
+          <div className="container">
+            <div className="about-quick">
+              <div className="about-identify">
+                <span className="section-index">01 / ABOUT DATAVERSE</span>
+                <h2>Not just a club.<br/><em>A place to start.</em></h2>
+              </div>
+              <div className="about-intro">
+                <p>We&apos;re building a learning community for students of Integral University who want to go <strong>beyond the classroom</strong>.</p>
+                <p>No need to be an expert. Just bring your curiosity and a willingness to try.</p>
+                <span className="about-location"><GraduationCap size={17}/> Integral University · Lucknow</span>
+              </div>
             </div>
-          </div>
-          <div className="subjects"><span>WHAT WE'LL EXPLORE</span><div>{subjects.map(subject => <span className="subject" key={subject}>{subject}</span>)}</div></div>
-        </section>
-
-        <section id="activities" className="activity-background">
-          <div className="container section-space">
-            <div className="section-label"><span>02 / 03</span><i /> WHAT WE HOPE TO DO</div>
-            <div className="section-heading"><h2>Learn it. <em>Try it.</em><br />Make it matter.</h2><p>Simple ideas, meaningful practice and a community moving forward together.</p></div>
-            <div className="feature-grid">
-              {features.map(({ number, Icon, title, description, type }) => (
-                <article className="feature" key={number}>
-                  <div className="feature-top"><span>{number} / {type}</span><MoveUpRight size={19} /></div>
-                  <div className="feature-icon"><Icon size={36} strokeWidth={1.4} /></div>
-                  <h3>{title}</h3>
-                  <p>{description}</p>
-                </article>
-              ))}
-            </div>
-            <div className="benefits">
-              <div><Lightbulb size={21} /><p><strong>For students</strong><span>Practical skills, confidence, teamwork and room to experiment.</span></p></div>
-              <div><BrainCircuit size={21} /><p><strong>For faculty &amp; Integral University</strong><span>Opportunities for mentoring, projects and student-led academic collaboration.</span></p></div>
+            <div className="quick-strip" aria-label="Our three values">
+              <div><span className="quick-icon"><BookOpenText size={22}/></span><strong>Learn</strong><p>Understand something new.</p></div>
+              <div><span className="quick-icon"><Rocket size={22}/></span><strong>Build</strong><p>Turn ideas into projects.</p></div>
+              <div><span className="quick-icon"><UsersRound size={22}/></span><strong>Connect</strong><p>Get better together.</p></div>
             </div>
           </div>
         </section>
 
-        <section id="plan" className="container plan section-space">
-          <div className="plan-header">
-            <div><div className="section-label"><span>03 / 03</span><i /> OUR FIRST STEPS</div><h2>Small starts.<br /><em>Big possibilities.</em></h2></div>
-            <p>Our first chapter at Integral University will start small, with student participation, faculty guidance and room to learn along the way.</p>
+        <section id="activities" className="activities-section">
+          <div className="container">
+            <div className="activities-heading">
+              <div><span className="section-index">02 / THE EXPERIENCE</span><h2>Less just watching.<br/><em>More actually doing.</em></h2></div>
+              <p>Here&apos;s the kind of student-led learning we want to create as the club takes shape.</p>
+            </div>
+            <div className="activity-grid">
+              {activities.map((item,i)=>{
+                const Icon=item.icon;
+                return <article className={"activity-card activity-"+(i+1)} key={item.n}>
+                  <div className="activity-top"><span>{item.n} / {item.tag}</span><ArrowUpRight size={19}/></div>
+                  <div className="activity-art"><div className="activity-ring"/><Icon size={60} strokeWidth={1.3}/><div className="activity-spark">✳</div></div>
+                  <h3>{item.title}</h3><p>{item.description}</p>
+                  <div className="activity-foot"><span>{item.foot}</span><ArrowRight size={17}/></div>
+                </article>;
+              })}
+            </div>
           </div>
-          <div className="steps">
-            {steps.map(step => <div className="step" key={step.number}>
-              <span className="step-number">{step.number}</span>
-              <div><h3>{step.title}</h3><p>{step.description}</p></div>
-              <Compass size={22} strokeWidth={1.3} />
-            </div>)}
+        </section>
+
+        <section id="plan" className="plan-section">
+          <div className="container plan-grid">
+            <div className="plan-copy">
+              <span className="section-index">03 / OUR FIRST CHAPTER</span>
+              <h2>Start small.<br/><em>Think bigger.</em></h2>
+              <p>A simple beginning: get students together, explore new skills, then create something meaningful. Activities will be shaped by participation and faculty guidance.</p>
+              <div className="plan-note"><Compass size={20}/><span>We&apos;re at the beginning, and that&apos;s the exciting part.</span></div>
+            </div>
+            <div className="phase-list">
+              {phases.map((phase,i)=>
+                <div className={openPhase===i?"phase open":"phase"} key={phase.number}>
+                  <button type="button" className="phase-button" aria-expanded={openPhase===i} aria-controls={"phase-"+i} onClick={()=>setOpenPhase(openPhase===i?-1:i)}>
+                    <span className="phase-no">{phase.number}</span>
+                    <span className="phase-main"><span>{phase.label}</span><strong>{phase.title}</strong><small>{phase.summary}</small></span>
+                    <span className="phase-arrow"><ChevronDown size={22}/></span>
+                  </button>
+                  {openPhase===i&&<div className="phase-details" id={"phase-"+i}>
+                    <p>{phase.detail}</p>
+                    <div>{phase.tags.map(tag=><span key={tag}>{tag}</span>)}</div>
+                  </div>}
+                </div>
+              )}
+            </div>
           </div>
-          <div className="final-note"><div className="final-icon"><Workflow size={27} strokeWidth={1.5} /></div><div><span>THE BEGINNING OF SOMETHING NEW</span><h3>Let&apos;s learn something <em>remarkable.</em></h3></div><ArrowUpRight size={28} className="final-arrow" /></div>
+        </section>
+
+        <section className="closing-section">
+          <div className="container closing-inner">
+            <span>THE VERSE IS JUST BEGINNING ✳</span>
+            <h2>Different minds.<br/><em>One shared curiosity.</em></h2>
+            <p>Learn together. Build together. Grow together.</p>
+            <a href="#top">Back to the beginning <ArrowUpRight size={19}/></a>
+          </div>
         </section>
       </main>
-      <footer className="footer"><div className="container footer-inner">
-        <Logo />
-        <p>Student-led Data Science &amp; Analytics initiative at Integral University, Lucknow.</p>
-        <div><span>INTEGRAL UNIVERSITY · LUCKNOW</span><a href="#top">BACK TO TOP ↑</a></div>
-      </div></footer>
+      <footer className="site-footer"><div className="container footer-content"><Brand/><p>A student-led Data Science &amp; Analytics initiative at Integral University, Lucknow.</p><span>MADE FOR THE CURIOUS · {new Date().getFullYear()}</span></div></footer>
     </>
   );
 }
