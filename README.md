@@ -1,43 +1,41 @@
-# DataVerse
+# Integral DataVerse ✳
 
-**Curious minds. Limitless ideas.**
+**Learn data. Build what's next.**
 
-A short, premium landing page introducing **DataVerse**, a new student-led Data Science & Analytics initiative, to students, teachers, and faculty.
+A premium, interactive introduction to **Integral DataVerse**, a student-led Data Science & Analytics club initiative at Integral University, Lucknow. This site is for students, teachers, faculty and anyone curious about the club.
 
-## What the website covers
+## What visitors find immediately
 
-- An introduction to DataVerse and why we're starting.
-- Learning interests: Python, Data Analytics, Statistics, Data Visualization and AI.
-- Proposed activities: learn together, build projects, develop community.
-- Benefits for students and opportunities for faculty collaboration.
-- A simple three-step plan: Connect, Explore, Create.
+- A clear explanation of the club and its practical-learning purpose on the first screen.
+- **Inside the Verse**: interactive Python / Data / AI examples. The chart is labelled sample data, not invented club results.
+- **About DataVerse**: a concise club introduction and the three core values (learn, build, connect).
+- **What we'll do**: planned workshops, student projects and collaborative learning.
+- **Our first chapter**: a functional interactive three-stage plan (connect, explore, create).
+- Real Integral University seal with student-led identification, without implying official university approval.
 
-The club is at an early stage. The page presents intentions as *plans*, not completed achievements, and makes no claims of official institutional approval. It deliberately includes no selection tests, recruitment portal, fake membership numbers, nonfunctional sign-up buttons, or personal data forms.
+## Quality
 
-## Development
+- Responsive for desktop, tablet and phone.
+- Accessible tabs, keyboard-friendly buttons, reduced-motion support.
+- No unnecessary signup forms, fake statistics, or broken calls to action.
+- No recruitment test or Founding Five marketing.
+- All events and initiatives described as planned, not already accomplished.
 
-Requires Node.js 20.9+.
+## Develop
+
+Node.js 20.9+.
 
 \`\`\`bash
 npm install
 npm run dev
-\`\`\`
-
-Visit http://localhost:3000.
-
-\`\`\`bash
 npm run typecheck
 npm run build
 \`\`\`
 
-## Deployment
+## Deploy
 
-The repository is connected to Vercel. Updates to \`main\` should trigger a deployment automatically. No environment variables or database are needed.
+GitHub repo: https://github.com/nityansh19/Data-Verse
 
-**Stack:** Next.js 15, React 19, TypeScript, Lucide icons and custom responsive CSS.
+Connected to Vercel; pushes to main automatically redeploy the landing page. No environment variables or database needed.
 
-## University context
-
-**Integral DataVerse** is an emerging student-led Data Science & Analytics initiative by students of Integral University, Lucknow. The website includes the Integral University seal, provided by the organizer and optimized for fast web display. Displaying the seal does not imply official university authorization, sponsorship or endorsement.
-
-Website brand: Integral DataVerse · Student-led · Integral University, Lucknow.
+**Stack:** Next.js 15, React 19, TypeScript, Lucide React, bespoke CSS.
